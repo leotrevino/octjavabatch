@@ -1,0 +1,202 @@
+package com.precipio.java;
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+/*
+ * Day 1 Java Lab Excercises
+ */
+
+public class JavaLab {
+
+	public static void main(String[] args) {
+
+		// problem 1-performing given arithmetic operations
+		int a = -5 + 8 * 6;
+		int b = (55 + 9) % 9;
+		int c = 20 + -3 * 5 / 8;
+		int d = 5 + 15 / 3 * 2 - 8 % 3;
+
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 2 - performing arithmetic operations for two numbers
+
+		Scanner in = new Scanner(System.in); // scanner class object
+
+		// inputing of integers given by user
+		System.out.println("Enter first number :");
+		int num1 = in.nextInt();
+		System.out.println("Enter second number :");
+		int num2 = in.nextInt();
+
+		// arithmetic operations
+		int sum = num1 + num2;
+		int multiply = num1 * num2;
+		int subtract = num1 - num2;
+		int divide = num1 / num2;
+		int remainder = num1 % num2;
+
+		System.out.println("Sum : " + sum);
+		System.out.println("Multiplication : " + multiply);
+		System.out.println("Subtraction : " + subtract);
+		System.out.println("Division : " + divide);
+		System.out.println("Remainder : " + remainder);
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 3 - finding average of three numbers
+
+		// inputing of integers given by user
+		System.out.println("Enter first number :");
+		int numA = in.nextInt();
+		System.out.println("Enter second number :");
+		int numB = in.nextInt();
+		System.out.println("Enter third number :");
+		int numC = in.nextInt();
+
+		// average operation of three numbers
+		int average = (numA + numB + numC) / 3;
+
+		System.out.println("Average : " + average);
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 4 - swapping two variables
+
+		int x = 10, y = 90;
+
+		System.out.println("These variables: " + "x = " + x + " and y = " + y);
+
+		int der = x;
+		x = y;
+		y = der;
+
+		System.out.println("Are swapped so that: " + "x = " + x + " and y = " + y);
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 5 - checking whether a number variable is prime or not
+
+		int i = 0, m = 0, flag = 0;
+		int n = 3; // number that we will check if prime or not prime
+		m = n / 2;
+
+		if (n == 0 || n == 1) {
+			System.out.println(n + "is not a prime number.");
+		} else {
+			for (i = 2; i <= m; i++) {
+				if (n % i == 0)
+					System.out.println(n + "is not a prime number.");
+				flag = 1;
+				break;
+			}
+		}
+		if (flag == 0) {
+			System.out.println(n + " is a prime number.");
+		}
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 6 - printing the ascii value of a given character
+
+		char letter = 'a';
+		int ascii = letter;
+
+		System.out.println("The ASCII value of " + letter + " is: " + ascii);
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 7 -fizzbuzz program for integers 1 - 100
+
+		int n100 = 100;
+
+		// looping for 100 times
+		for (int i1 = 1; i1 <= n100; i1++) {
+			if (i1 % 15 == 0) // if number is divisible by 15
+				System.out.println("FizzBuzz" + " "); // print FizzBuzz
+			else if (i1 % 5 == 0) // if number is divisible by 5
+				System.out.println("Buzz" + " "); // print Buzz
+			else if (i1 % 3 == 0) // if number is divisible by 3
+				System.out.println("Fizz" + " "); // print Fizz
+			else
+				System.out.println(i1 + " ");
+		}
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 8 - program to read a number and calucalte the sum of odd digits
+		// present in it
+
+		System.out.println("Please enter your number to calulate the sum of its odd digits:");
+		int n2 = in.nextInt();
+		int summ = 0;
+		while (n2 > 0) {
+			int remm = n2 % 10;
+			if (remm % 2 != 0) {
+				summ = summ + remm;
+			}
+			n2 = n2 / 10;
+		}
+
+		if (summ % 2 == 0) {
+			System.out.println("Sum of the odd digits is even");
+		} else {
+			System.out.println("Sum of the odd digits is odd");
+		}
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 9 - finding sum of squares of even digits
+		System.out.println("Please enter your number to find the sum of squares of its even digits:");
+
+		int n3 = in.nextInt();
+		int n4 = 0, n5 = 0;
+		while (n3 != 0) {
+			n4 = n3 % 10;
+			if ((n4 % 2) == 0)
+				n5 += n4 * n4;
+			n3 /= 10;
+		}
+		System.out.println(n5);
+
+		System.out.println(
+				"________________________________________________________________________________________________________");
+
+		// problem 10 - finding and returning the longest word in sentence
+		System.out.println("Please enter a sentence:");
+
+		Scanner sc = new Scanner(System.in);
+		String s1 = sc.nextLine();
+		System.out.println(lengthiestString(s1));
+	}
+
+	public static String lengthiestString(String s1) {
+		int max = 0;
+		String s2 = new String();
+		StringTokenizer t = new StringTokenizer(s1, " ");
+		while (t.hasMoreTokens()) {
+			String s3 = t.nextToken();
+			int n = s3.length();
+			if (n > max) {
+				max = n;
+				s2 = s3;
+			}
+		}
+		return s2;
+
+	}
+
+}
