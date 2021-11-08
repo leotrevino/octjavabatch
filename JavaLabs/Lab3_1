@@ -1,0 +1,11 @@
+public class JavaLab3 {
+
+	public static void main(String[] args) {
+		 String str = "Here You may type thE stRing TO CONVERT tO aLl lowerCASE.";
+		  
+	        // converting string s to lowercase letter
+	        String lowercase = str.toLowerCase();
+	        System.out.println(lowercase);
+	}
+
+}
