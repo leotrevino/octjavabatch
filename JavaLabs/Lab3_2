@@ -1,0 +1,15 @@
+public class JavaLab3_2 {
+
+	public static void main(String args[]){
+
+		// Declaring and initializing custom input string
+		String Str = new String("Welcome to the world of Java. dddd hhhh ddd hhh dd hh d h");
+
+		// Using replace to replace characters
+		System.out.println(Str);
+		System.out.print("After replacing all 'd' with 'h' we get : ");
+		System.out.println(Str.replace('d', 'h'));
+
+	
+	}
+}
