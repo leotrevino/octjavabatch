@@ -1,0 +1,37 @@
+package com.precipio.java;
+
+import java.util.Scanner;
+import java.util.*;
+
+public class JavaLab2 {
+
+	public static void main(String[] args) {
+
+		// problem 1 - java method to find the smallest number among three numbers
+		
+		Scanner in = new Scanner(System.in);
+
+		System.out.println("Enter your first number: ");
+		double i = in.nextDouble();
+
+		System.out.println("Enter your second number: ");
+		double j = in.nextDouble();
+
+		System.out.println("Enter your third number: ");
+		double k = in.nextDouble();
+
+		System.out.println("The smallest number inputed was: " + smallest(i, j, k) + "\n");
+
+
+	}
+
+	public static double smallest(double i, double j, double k) {
+		return Math.min(Math.min(i, j), k);
+	}
+
+	
+	
+
+}
+
+
